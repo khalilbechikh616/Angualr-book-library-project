@@ -1,0 +1,168 @@
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  .header {
+    position: absolute;
+    top: 56px; /* Height of the navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/images/istockphoto-1308634001-612x612.jpg');
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  header {
+  transition: filter 0.5s ease-in-out;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #252525;
+  }
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    background-color: #525252;
+  }
+  .search-dropdown {
+    color: #ffffff; /* White color */
+  }
+  .navbar .form-control {
+    border-radius: 30px;
+  }
+  .navbar .form-control:focus {
+    box-shadow: none;
+  }
+  .dropdown-menu {
+    background-color: #252525;
+  }
+  .dropdown-item {
+    color: #ffffff !important;
+  }
+  .dropdown-item:hover {
+    background-color: #525252;
+  }
+  .header-btn {
+    background-color: #252525; /* Purple color */
+    color: #ffffff; /* White color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Adjust border-radius to create a rounded shape */
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.5s ease-in-out;
+  }
+  .header-btn:hover {
+    background-color: #525252;
+  }
+  
+#main-content {
+height: 100vh;
+overflow-y: scroll;
+padding: 5%;
+box-sizing: border-box;
+transition: transform 0.5s ease-in-out;
+}
+
+.hide-main {
+transform: translateY(-100%);
+}
+
+.show-main {
+transform: translateY(0);
+}
+.btn-group-space-between > .btn {
+    margin-right: 10px; /* Espace entre les boutons */
+  }
+  .btn-group-space-between > .btn:last-child {
+    margin-right: 0; /* Aucun espace après le dernier bouton */
+  }
+  footer {
+  text-align: center;}
+  .footer {
+background: linear-gradient(to right, #2c3e50, #34495e); /* Gradient background */
+color: #ffffff;
+padding: 30px 0;
+position: relative; /* Set position to relative for positioning pseudo-elements */
+overflow: hidden; /* Hide overflow to prevent pseudo-elements from affecting layout */
+}
+
+.footer::before,
+.footer::after {
+content: '';
+position: absolute;
+width: calc(100% + 20px); /* Adjust width to cover the entire footer and create overflow effect */
+height: calc(100% + 20px); /* Adjust height to cover the entire footer and create overflow effect */
+top: -10px; /* Offset to create overflow effect */
+left: -10px; /* Offset to create overflow effect */
+z-index: -1; /* Set z-index to layer behind the footer content */
+border-radius: 15px; /* Adjust border-radius for the glow effect */
+background: radial-gradient(circle, #ff66b3, #33ccff, #ccff33); /* Vibrant gradient colors for glow effect */
+animation: glowAnimation 3s infinite alternate; /* Animation for dynamic glow effect */
+}
+
+.creator-img {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+border: 3px solid #ffffff;
+margin-bottom: 10px; /* Add margin at the bottom to create space between images */
+}
+
+.creator-info {
+margin-top: 15px;
+font-weight: bold;
+}
+
+.creation-year {
+margin-top: 5px;
+font-size: 14px;
+}
+
+@keyframes glowAnimation {
+0% {
+  filter: blur(10px) brightness(150%);
+  transform: scale(1);
+}
+100% {
+  filter: blur(20px) brightness(200%);
+  transform: scale(1.2);
+}
+}
+
+@media (max-width: 768px) {
+.footer {
+  padding: 20px 0;
+}
+}
+#pe
+{
+  color: #f7f7f7;
+}
+.btn-group > .btn {
+    margin-right: 5px; /* Espacement entre les boutons */
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

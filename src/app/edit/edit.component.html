@@ -1,0 +1,48 @@
+<div class="background">
+    <header class="d-flex justify-content-between align-items-center">
+        <div class="edit profil">
+            <p id="ED">Edit Profil</p>
+        </div>
+        <ul>
+            <li class="nav-item">
+                <!-- Update the anchor tag with routerLink -->
+                <a class="nav-link" id="H" [routerLink]="['/homepage']">Home</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Edit your profile</h1>
+            <div class="row">
+                <div class="col">
+                    <label for="firstName">First Name</label>
+                    <input type="text" placeholder="Change your first name" class="form-control" id="firstName" [(ngModel)]="formData.firstName">
+                </div>
+                <div class="col">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" placeholder="Change your last name" class="form-control" id="lastName" [(ngModel)]="formData.lastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Change Password" class="form-control" id="password" [(ngModel)]="formData.password">
+                </div>
+                <div class="col">
+                    <label for="phoneNumber">Phone number</label>
+                    <input type="tel" placeholder="Change your phone number" class="form-control" id="phoneNumber" [(ngModel)]="formData.phoneNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="email">Your Email</label>
+                    <input type="email" placeholder="Change your email" class="form-control" id="email" [(ngModel)]="formData.email" readonly>
+                </div>
+            </div>
+            <div class="row mt-3" id="rw">
+                <button type="button" class="btn btn-primary" id="b" (click)="onSubmit()">Change your information</button>
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+            </div>
+        </div>
+    </main>
+</div>

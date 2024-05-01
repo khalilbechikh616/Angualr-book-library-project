@@ -1,0 +1,107 @@
+/* Styles for the Return to Home Page link */
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #4caf50; /* Green color */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background color and text color */
+}
+
+.home-link:hover {
+    background-color: #4caf50; /* Green background color on hover */
+    color: #fff; /* White text color on hover */
+}
+
+
+/* Container styles */
+.emprunter-ok-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4caf50, #008000); /* Green gradient background */
+}
+
+/* Content styles */
+.emprunter-ok-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 40px;
+    max-width: 600px; /* Increased max-width */
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); /* Box shadow for depth */
+}
+
+/* Heading styles */
+.emprunter-ok-content h2 {
+    color: #4caf50; /* Green color */
+    font-size: 32px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+/* Paragraph styles */
+.emprunter-ok-content p {
+    color: #333; /* Dark gray color */
+    font-size: 18px; /* Font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+/* Action button styles */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #4caf50; /* Green color */
+    color: #fff; /* White color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 30px; /* Padding */
+    font-size: 20px; /* Font size */
+    margin: 0 10px; /* Margin */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Emoji styles */
+.emojis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.emoji-wrapper {
+    margin: 0 20px; /* Adjust margin as needed */
+}
+
+.emoji {
+    width: 40px; /* Adjust the width of the emoji image */
+    height: 40px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    animation: rotate 2s linear infinite; /* Rotate non-stop */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid mt-5">
+    <!-- Display books -->
+    <div class="row mt-3">
+      <div class="col-3" *ngFor="let book of books">
+        <div class="card">
+          <img [src]="book.link_image" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.titre }}</h5>
+            <p class="card-text">
+              Auteur: {{ book.auteur }} <br>
+              Genre: {{ book.nomcategorie }} <br>
+              Disponibilité: {{ book.disponibilite }} <br>
+            </p>
+            <div class="btn-group btn-group-space-between" role="group" aria-label="Card Actions">
+              <div class="row">
+                <div class="col-md-6">
+                  <a [href]="book.pdf_link" class="btn btn-primary">Read</a>
+                </div>
+                <div class="col-md-6">
+                  <a (click)="handleBookEmprunt(book.disponibilite)" class="btn btn-primary">Emprunter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Display books -->
+</div>

@@ -1,0 +1,28 @@
+<div class="emprunter-ok-container">
+    <a routerLink="/homepage" class="home-link">&lt;&lt;Retour à la page d'accueil</a> <!-- Return to Home Page link -->
+    <div class="emprunter-ok-content">
+        <div class="emojis">
+            <div class="emoji-wrapper">
+                <img src="../../assets/images/Slightly_Smiling_Emoji_Icon_34f238ed-d557-4161-b966-779d8f37b1ac_large.png" alt="Sad Emoji" class="emoji"> <!-- Sad emoji on the left -->
+                <div class="emoji-background"></div> <!-- Background circle for animation -->
+            </div>
+            <h2>Emprunt Réussi!</h2>
+            <div class="emoji-wrapper">
+                <div class="emoji-background"></div> <!-- Background circle for animation -->
+                <img src="../../assets/images/Slightly_Smiling_Emoji_Icon_34f238ed-d557-4161-b966-779d8f37b1ac_large.png" alt="Sad Emoji" class="emoji"> <!-- Sad emoji on the right -->
+            </div>
+        </div>
+
+        <p>{{ lastName }} {{ firstName }} a emprunté le livre {{ titre }}.</p>
+
+        <p>Merci d'utiliser notre plateforme! N'oubliez pas de retourner le livre dans 5 jours.</p>
+        <p>Vous avez le droit d'emprunter jusqu'à 3 livres simultanément.</p>
+        <div class="dates">
+            <p>Date d'emprunt: <span class="dateemprunt">{{ dateEmprunt }}</span></p>
+            <p>Date de retour du livre: <span class="date-retour">{{ dateRetour }}</span></p>
+        </div>
+        <div class="action-buttons">
+            <button class="btn print-btn" (click)="onPrintClick()">Imprimer le reçu d'emprunt</button>
+        </div>
+    </div>
+</div>

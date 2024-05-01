@@ -1,0 +1,83 @@
+<div class="body">
+    <!-- Header -->
+    <header class="header">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" routerLink="/admin">Admin page</a>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0"></ul>
+        </div>
+      </nav>
+    </header>
+  
+    <div id="main-content" class="show-main">
+      <!-- Existing categories -->
+      <div class="container-fluid mt-5">
+        <!-- Buttons to add and delete a category -->
+        <div class="row">
+          <div class="col-6">
+            <button class="btn btn-primary w-100" (click)="toggleAddForm()">Ajouter une catégorie</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-danger w-100" (click)="toggleDeleteForm()">Supprimer une catégorie</button>
+          </div>
+        </div>
+  
+        <!-- Add category form -->
+        <div class="row mt-3" *ngIf="showAddForm">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Ajouter une catégorie</h5>
+                <!-- Category form fields -->
+                <form (ngSubmit)="ajouterCategorie()">
+                  <div class="mb-3">
+                    <label for="nomcategorie" class="form-label">Nom de la catégorie</label>
+                    <input type="text" class="form-control" id="nomcategorie" [(ngModel)]="categorie.nomcategorie" name="nomcategorie">
+                  </div>
+                  <div class="mb-3">
+                    <label for="link_img" class="form-label">Lien de l'image</label>
+                    <input type="text" class="form-control" id="link_img" [(ngModel)]="categorie.link_img" name="link_img">
+                  </div>
+                  <button type="submit" class="btn btn-success">Confirmer</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Delete category form -->
+        <div class="row mt-3" *ngIf="showDeleteForm">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Supprimer une catégorie</h5>
+                <form (submit)="supprimerCategorie()">
+                  <div class="mb-3">
+                    <label for="nomcategorie" class="form-label">Nom de la catégorie à supprimer</label>
+                    <input type="text" class="form-control" id="nomcategorie" placeholder="Entrez le nom de la catégorie à supprimer" [(ngModel)]="nomcategorie" name="nomcategorie">
+                  </div>
+                  <button type="submit" class="btn btn-danger">Confirmer</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Display existing categories -->
+        <div class="row mt-5">
+          <div class="col-md-3" *ngFor="let categorie of categories">
+            <div class="alert alert-warning" role="alert">
+              <a href="lien-de-votre-page.html">
+                <h5 class="card-title">{{ categorie.nomcategorie }}</h5>
+                <img src="{{ categorie.link_img }}" alt="{{ categorie.nomcategorie }}" width="100%">
+              </a>
+            </div>
+            <div class="row mt-3">
+              <button class="btn btn-danger mb-3" (click)="supprimerCategorie()">Supprimer cette catégorie</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

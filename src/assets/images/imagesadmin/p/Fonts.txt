@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Chelsea Market
+Author: Tart Workshop
+Url: https://fonts.google.com/specimen/Chelsea+Market
+
+Font: Quicksand
+Author: Andrew Paglinawan
+Url: https://fonts.google.com/specimen/Quicksand

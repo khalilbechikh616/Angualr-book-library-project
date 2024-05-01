@@ -1,0 +1,96 @@
+<div class="body">
+  <!-- Header -->
+  <header class="header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/admin">Admin page</a>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"></ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="main-content" class="show-main">
+    <!-- Existing livre cards -->
+    <div class="container-fluid mt-5">
+      <!-- Buttons to add and delete a livre -->
+      <div class="row">
+        <div class="col-6">
+          <button class="btn btn-primary w-100" (click)="toggleAddForm()">Ajouter un livre</button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-danger w-100" (click)="toggleDeleteForm()">supprimer un livre</button>
+        </div>
+      </div>
+
+      <!-- Add livre form -->
+      <div class="row mt-3" *ngIf="showAddForm">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ajouter un livre</h5>
+              <!-- Livre form fields -->
+              <form (ngSubmit)="ajouterLivre()">
+                <div class="mb-3">
+                  <label for="titre" class="form-label">Titre</label>
+                  <input type="text" class="form-control" id="titre" [(ngModel)]="livre.titre" name="titre">
+                </div>
+                <div class="mb-3">
+                  <label for="auteur" class="form-label">Auteur</label>
+                  <input type="text" class="form-control" id="auteur" [(ngModel)]="livre.auteur" name="auteur">
+                </div>
+                <div class="mb-3">
+                  <label for="nomcategorie" class="form-label">Nom de la catégorie</label>
+                  <input type="text" class="form-control" id="nomcategorie" [(ngModel)]="livre.nomcategorie"
+                    name="nomcategorie">
+                </div>
+                <div class="mb-3">
+                  <label for="disponibilite" class="form-label">Disponibilité</label>
+                  <select class="form-select" id="disponibilite" [(ngModel)]="livre.disponibilite" name="disponibilite">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                
+                
+                <div class="mb-3">
+                  <label for="code_image" class="form-label">Code de l'image</label>
+                  <input type="text" class="form-control" id="code_image" [(ngModel)]="livre.link_image"
+                    name="link_image">
+                </div>
+                <div class="mb-3">
+                  <label for="pdf_link" class="form-label">Lien PDF</label>
+                  <input type="text" class="form-control" id="pdf_link" [(ngModel)]="livre.pdf_link" name="pdf_link">
+                </div>
+                <button type="submit" class="btn btn-success">Confirmer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete livre form -->
+      <div class="row mt-3" *ngIf="showDeleteForm">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Supprimer un livre</h5>
+              <form (submit)="supprimerLivre()">
+                <div class="mb-3">
+                  <label for="idLivre" class="form-label">ID du livre à supprimer</label>
+                  <input type="text" class="form-control" id="idLivre" placeholder="Entrez l'ID du livre à supprimer"
+                    [(ngModel)]="idLivre" name="idLivre">
+              </div>
+                <button type="submit" class="btn btn-danger">Confirmer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

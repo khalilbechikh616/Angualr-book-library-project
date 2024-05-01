@@ -1,0 +1,203 @@
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  .header {
+    position: absolute;
+    top: 56px; /* Height of the navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/images/istockphoto-1308634001-612x612.jpg');
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  header {
+  transition: filter 0.5s ease-in-out;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #252525;
+  }
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    background-color: #525252;
+  }
+  .search-dropdown {
+    color: #ffffff; /* White color */
+  }
+  .navbar .form-control {
+    border-radius: 30px;
+  }
+  .navbar .form-control:focus {
+    box-shadow: none;
+  }
+  .dropdown-menu {
+    background-color: #252525;
+  }
+  .dropdown-item {
+    color: #ffffff !important;
+  }
+  .dropdown-item:hover {
+    background-color: #525252;
+  }
+  .header-btn {
+    background-color: #252525; /* Purple color */
+    color: #ffffff; /* White color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Adjust border-radius to create a rounded shape */
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.5s ease-in-out;
+  }
+  .header-btn:hover {
+    background-color: #525252;
+  }
+  
+#main-content {
+height: 100vh;
+overflow-y: scroll;
+padding: 5%;
+box-sizing: border-box;
+transition: transform 0.5s ease-in-out;
+}
+.btn-group-space-between > .btn {
+    margin-right: 10px; /* Espace entre les boutons */
+  }
+  .btn-group-space-between > .btn:last-child {
+    margin-right: 0; /* Aucun espace après le dernier bouton */
+  }
+.creator-img {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+border: 3px solid #ffffff;
+margin-bottom: 10px; /* Add margin at the bottom to create space between images */
+}
+
+.creator-info {
+margin-top: 15px;
+font-weight: bold;
+}
+
+.creation-year {
+margin-top: 5px;
+font-size: 14px;
+}
+
+@keyframes glowAnimation {
+0% {
+  filter: blur(10px) brightness(150%);
+  transform: scale(1);
+}
+100% {
+  filter: blur(20px) brightness(200%);
+  transform: scale(1.2);
+}
+}
+
+@media (max-width: 768px) {
+.footer {
+  padding: 20px 0;
+}
+}
+#pe
+{
+  color: #f7f7f7;
+}
+.show-main {
+transform: translateY(0);
+
+}
+body {
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'arrière-plan */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    /* Ajoutez d'autres propriétés CSS selon vos préférences */
+  }
+  
+
+
+.alert {
+position: relative; /* Permet de positionner la photo à l'arrière-plan */
+background-size: cover; /* Redimensionne la photo pour couvrir toute la case */
+background-position: center; /* Positionne la photo au centre de la case */
+padding: 0%;
+}
+
+.alert .card-title {
+position: absolute; /* Positionne le titre de la carte */
+bottom: 10px; /* Aligner le titre en bas de la carte */
+left: 10px; /* Aligner le titre à gauche de la carte */
+color: #ffffff; /* Couleur du texte du titre */
+font-size: 24px; /* Taille de police du titre */
+}
+
+.alert a {
+color: inherit; /* Couleur du lien héritée du parent */
+text-decoration: none; /* Supprimer la soulignement du lien */
+}
+.custom-alert {
+  height: 100%; /* Assurez-vous que chaque alerte remplit la hauteur de sa colonne parente */
+  padding: 20px; /* Ajoutez un espacement interne pour le contenu */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* CSS for modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<div class="body">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" routerLink="/admin">Admin page</a>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main-content" class="show-main">
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div id="pge">
+                    <div id="cdr">
+                        <h3>Mettre à jour la disponibilité</h3>
+                        <p class="ttr">Entrez l'ID du livre à mettre à jour :</p>
+                        <p>Entrez l'id de livre retourné ici pour la mise à jour de sa disponibilité</p>
+                        <input type="text" id="idLivre" [(ngModel)]="idLivre">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <button class="btn btn-primary" (click)="updateDisponibilite()">Mettre à jour la disponibilité</button>
+                </div>
+            </div>
+        </div>
+
+        <footer></footer>
+    </div>
+</div>

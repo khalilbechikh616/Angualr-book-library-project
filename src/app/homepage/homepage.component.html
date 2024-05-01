@@ -1,0 +1,159 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="logo-circle">
+          <img src="../../assets/images/logohomepage.jpg" alt="Your Logo">
+        </div>
+        <a class="navbar-brand title-margin" href="#">Book Library</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex flex-grow-1" (submit)="onSubmit()">
+          <input class="form-control me-2 search-input" id="searchInput" type="search" placeholder="Search"
+            aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery" (click)="shineSearchZone()">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToHomePage()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/categories']">Categories</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" (click)="toggleDropdown()"
+              aria-haspopup="true" aria-expanded="false">
+              Search
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpen">
+              <a class="dropdown-item search-dropdown" href="#"
+                (click)="changePlaceholderAndFocus('Enter Author Name', 'auteur')">Search by Author Name</a>
+              <a class="dropdown-item search-dropdown" href="#"
+                (click)="changePlaceholderAndFocus('Enter Book Name', 'titre')">Search by Book Name</a>
+              <a class="nav-link" [routerLink]="['/categories']">Search by Category</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/historique">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/compte']">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="citation-container">
+    <div class="citation">{{ dynamicCitation }}</div>
+  </div>
+  <button id="getStarted" class="header-btn" (click)="showMainContent()">Let's Get Started</button>
+</header>
+
+<div id="main-content" [class.hide-main]="!isMainContentVisible" [class.show-main]="isMainContentVisible">
+  <div class="container-fluid mt-5">
+    <!-- Display books -->
+    <div class="row mt-3">
+      <div class="col-3" *ngFor="let book of books">
+        <div class="card">
+          <img [src]="book.link_image" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.titre }}</h5>
+            <p class="card-text">
+              Auteur: {{ book.auteur }} <br>
+              Genre: {{ book.nomcategorie }} <br>
+              Disponibilité: {{ book.disponibilite }} <br>
+            </p>
+            <div class="btn-group btn-group-space-between" role="group" aria-label="Card Actions">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn-primary" (click)="navigateToBookDetails(book.pdf_link)">Read</button>
+                </div>
+                
+                <div class="col-md-6">
+                  <!-- Hidden input field to hold id_livre -->
+                  <input type="hidden" [value]="book.id_livre" name="id_livre">
+                  <a (click)="handleBookEmprunt(book.disponibilite, book.titre,book.id_livre,book.auteur,book.link_image)" class="btn btn-primary">Emprunter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Display books -->
+  </div>
+</div>
+
+
+<footer>
+  <div class="container-fluid footer">
+    <div class="row align-items-center">
+      <!-- Creator Section -->
+      <div class="col text-center">
+        <img src="../../assets/images/tasnim.jpg" alt="Creator 1" class="rounded-circle creator-img">
+        <div class="creator-info">Tasnim Boumaiza</div>
+      </div>
+      <div class="col text-center">
+        <img src="../../assets/images/shayma.jpg" alt="Creator 2" class="rounded-circle creator-img">
+        <div class="creator-info">Shayma Sherni</div>
+      </div>
+      <div class="col text-center">
+        <img src="../../assets/images/khalil.jpg" alt="Creator 3" class="rounded-circle creator-img">
+        <div class="creator-info">Mohamed khalil Bechikh</div>
+      </div>
+    </div>
+    <!-- Additional Content Section -->
+    <div class="row mt-4">
+      <div class="col-md-4 text-center">
+        <h5>Contact Us</h5>
+        <p>Email: BookLibrary&#64;gmail.com<br>Phone: +216 92 180 201</p>
+      </div>
+      <!-- Social Media Links -->
+      <div class="col-md-4 text-center">
+        <h5>Follow Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
+      <!-- Site Navigation Links -->
+      <div class="col-md-4 text-center">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Newsletter Subscription Section -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <h5>Subscribe to Our Newsletter</h5>
+        <form>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email"
+              aria-describedby="subscribe-btn">
+            <button class="btn btn-primary" type="button" id="subscribe-btn">Subscribe</button>
+          </div>
+        </form>
+      </div>
+</div>
+    <!-- Copyright Section -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <p>&copy; 2024 Book Library. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

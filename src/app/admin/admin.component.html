@@ -1,0 +1,95 @@
+<div class="body">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" routerLink="/admin">Admin page</a>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                </ul>
+            </div>
+        </nav>
+        <button id="getStarted" class="header-btn" (click)="toggleMainContentVisibility()">Let's Get Started</button>
+    </header>
+
+    <div id="main-content" [ngClass]="{'hide-main': !isMainContentVisible, 'show-main': isMainContentVisible}">
+        <div class="container">
+            <div class="centered">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a routerLink="/gererlivre"><button type="button" class="btn btn-primary">Gérer livres</button></a>
+                    <a routerLink="/gerercompte"><button type="button" class="btn btn-secondary">Gérer
+                            comptes</button></a>
+                    <a href="/gerercategorie"><button type="button" class="btn btn-success">Gérer
+                            catégories</button></a>
+                    <a routerLink="/gereremprunte"><button type="button" class="btn btn-danger">Suivre les
+                            emprunts</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid footer">
+            <div class="row align-items-center">
+                <!-- Creator Section -->
+                <div class="col text-center">
+                    <img src="../../assets/images/tasnim.jpg" alt="Creator 1" class="rounded-circle creator-img">
+                    <div class="creator-info">Tasnim Boumaiza</div>
+                </div>
+                <div class="col text-center">
+                    <img src="../../assets/images/shayma.jpg" alt="Creator 2" class="rounded-circle creator-img">
+                    <div class="creator-info">Shayma Sherni</div>
+                </div>
+                <div class="col text-center">
+                    <img src="../../assets/images/khalil.jpg" alt="Creator 3" class="rounded-circle creator-img">
+                    <div class="creator-info">Mohamed khalil Bechikh</div>
+                </div>
+            </div>
+            <!-- Additional Content Section -->
+            <div class="row mt-4">
+                <div class="col-md-4 text-center">
+                    <h5>Contact Us</h5>
+                    <p>Email: BookLibrary&#64;gmail.com<br>Phone: +216 92 180 201</p>
+                </div>
+                <!-- Social Media Links -->
+                <div class="col-md-4 text-center">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <!-- Site Navigation Links -->
+                <div class="col-md-4 text-center">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Newsletter Subscription Section -->
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <h5>Subscribe to Our Newsletter</h5>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email"
+                                aria-describedby="subscribe-btn">
+                            <button class="btn btn-primary" type="button" id="subscribe-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Copyright Section -->
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p>&copy; 2024 Book Library. All rights reserved.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,57 @@
+<div class="background">
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="profil-logo">My Profil</div>
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" id="H" routerLink="/homepage">Home</a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Main content -->
+  <div class="container mt-3">
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <section class="user-info">
+          <div class="profile-picture">
+            <img src="../../assets/images/profil.jpg" alt="Profile Picture">
+            <br>
+            <br>
+            <button class="btn btn-primary" (click)="selectImage()">Change photo</button>
+            <input type="file" id="image-input" accept="image/*" style="display: none;" (change)="handleImageInput($event)">
+          </div>
+        </section>
+      </div>
+      <div class="col-md-6">
+        <div class="user-details">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="accountName">First Name</label>
+              <input type="text" id="Firstname" class="form-control" [value]="firstname" readonly>
+            </div>
+            <div class="col-sm-6">
+              <label for="gmail">Gmail:</label>
+              <input type="text" id="gmail" class="form-control" [value]="gmail" readonly>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-sm-6">
+              <label for="password">Last Name:</label>
+              <input type="text" id="Lastname" class="form-control" [value]="lastname" readonly>
+            </div>
+            <div class="col-sm-6">
+              <label for="phoneNumber">Phone Number:</label>
+              <input type="text" id="phoneNumber" class="form-control" [value]="phoneNumber" readonly>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="d-grid gap-2 col-12 mx-auto">
+              <button class="btn btn-primary btn-block" (click)="navigateToEdit()">Profile Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

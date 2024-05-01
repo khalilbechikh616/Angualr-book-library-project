@@ -1,0 +1,25 @@
+<div class="historique-container">
+  <div class="historique-content">
+    <a routerLink="/homepage" class="home-link">Retour à la page d'accueil</a>
+  </div>
+
+  <ng-container *ngIf="historiqueBooks.length > 0">
+    <div class="row-books">
+      <div class="col-book" *ngFor="let book of historiqueBooks">
+        <div class="card">
+          <img [src]="book.link_image" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.titre }}</h5>
+            <p class="card-text">
+              Auteur: {{ book.auteur }} <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div *ngIf="historiqueBooks.length === 0">
+    <p>Aucun livre emprunté pour le moment</p>
+  </div>
+</div>
